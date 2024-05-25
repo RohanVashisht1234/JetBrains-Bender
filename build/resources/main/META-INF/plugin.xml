@@ -1,0 +1,49 @@
+<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+  <version>2.0.0</version>
+  <idea-version since-build="232" until-build="241.*" />
+  <!-- Unique id for this plugin. Must stay constant for the life of the plugin. -->
+  <id>org.intellij.sdk.language</id>
+  <!-- Text to display as name on Settings | Plugin page -->
+  <name>SDK: Bend Language Sample</name>
+  <!-- Product and plugin compatibility requirements -->
+  <depends>com.intellij.modules.platform</depends>
+  <depends>com.intellij.java</depends>
+  <!-- Text to display as description on Settings | Plugin page -->
+  <description><![CDATA[Demonstrates how to add custom language support to an IntelliJ Platform-based IDE. <br>Defines a new language,
+      <i>Bend language</i> with support for syntax highlighting, annotations, code completion, and other features.
+      <br>
+      See the
+      <a href="https://plugins.jetbrains.com/docs/intellij/custom-language-support-tutorial.html">Custom
+      Language Tutorial</a> for more information.]]></description>
+  <change-notes><![CDATA[<ul>
+        <li><b>2.0.0</b> Convert to Gradle-based plugin.</li>
+        <li><b>1.0.0</b> Release 2018.3 and earlier.</li>
+      </ul>]]></change-notes>
+  <!-- Text to display as company information on Settings | Plugin page -->
+  <vendor url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
+  <extensions defaultExtensionNs="com.intellij">
+    <fileType name="Bend File" implementationClass="org.intellij.sdk.language.BendFileType" fieldName="INSTANCE" language="Bend" extensions="bend" />
+    <lang.parserDefinition language="Bend" implementationClass="org.intellij.sdk.language.BendParserDefinition" />
+    <lang.syntaxHighlighterFactory language="Bend" implementationClass="org.intellij.sdk.language.BendSyntaxHighlighterFactory" />
+    <iconProvider implementation="org.intellij.sdk.language.BendPropertyIconProvider" />
+    <colorSettingsPage implementation="org.intellij.sdk.language.BendColorSettingsPage" />
+    <annotator language="JAVA" implementationClass="org.intellij.sdk.language.BendAnnotator" />
+    <codeInsight.lineMarkerProvider language="JAVA" implementationClass="org.intellij.sdk.language.BendLineMarkerProvider" />
+    <completion.contributor language="Bend" implementationClass="org.intellij.sdk.language.BendCompletionContributor" />
+    <psi.referenceContributor language="JAVA" implementation="org.intellij.sdk.language.BendReferenceContributor" />
+    <lang.refactoringSupport language="Bend" implementationClass="org.intellij.sdk.language.BendRefactoringSupportProvider" />
+    <lang.findUsagesProvider language="Bend" implementationClass="org.intellij.sdk.language.BendFindUsagesProvider" />
+    <lang.foldingBuilder language="JAVA" implementationClass="org.intellij.sdk.language.BendFoldingBuilder" />
+    <gotoSymbolContributor implementation="org.intellij.sdk.language.BendChooseByNameContributor" />
+    <lang.psiStructureViewFactory language="Bend" implementationClass="org.intellij.sdk.language.BendStructureViewFactory" />
+    <navbar implementation="org.intellij.sdk.language.BendStructureAwareNavbar" />
+    <lang.formatter language="Bend" implementationClass="org.intellij.sdk.language.BendFormattingModelBuilder" />
+    <codeStyleSettingsProvider implementation="org.intellij.sdk.language.BendCodeStyleSettingsProvider" />
+    <langCodeStyleSettingsProvider implementation="org.intellij.sdk.language.BendLanguageCodeStyleSettingsProvider" />
+    <lang.commenter language="Bend" implementationClass="org.intellij.sdk.language.BendCommenter" />
+    <lang.documentationProvider language="Bend" implementationClass="org.intellij.sdk.language.BendDocumentationProvider" />
+    <spellchecker.support language="Bend" implementationClass="org.intellij.sdk.language.BendSpellcheckingStrategy" />
+  </extensions>
+</idea-plugin>

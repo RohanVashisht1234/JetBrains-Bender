@@ -1,0 +1,25 @@
+<application>
+  <component name="RecentProjectsManager">
+    <option name="additionalInfo">
+      <map>
+        <entry key="$USER_HOME$/bend">
+          <value>
+            <RecentProjectMetaInfo frameTitle="bend – test.bend" projectWorkspaceId="2gx6NORRRKI5lI9c11Y6GbAlxse">
+              <option name="activationTimestamp" value="1716626840004" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IC-232.10300.40" />
+              <option name="buildTimestamp" value="1707923893005" />
+              <option name="colorInfo">
+                <RecentProjectColorInfo associatedIndex="8" />
+              </option>
+              <frame x="155" y="59" width="1400" height="949" />
+              <option name="productionCode" value="IC" />
+              <option name="projectOpenTimestamp" value="1716626841365" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="lastOpenedProject" value="$USER_HOME$/bend" />
+  </component>
+</application>
